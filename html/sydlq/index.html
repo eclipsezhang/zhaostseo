@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>万能登录器</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="">
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+        background: #000;
+    }
+
+    img {
+        pointer-events: none;
+        vertical-align: sub;
+    }
+
+    a,
+    a:hover,
+    a:active,
+    a:visited,
+    a:link,
+    a:focus {
+
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        -webkit-tap-highlight-color: transparent;
+
+        outline: none;
+
+        background: none;
+
+        text-decoration: none;
+    }
+
+    .android,
+    .h5,
+    .ios {
+        position: absolute;
+        top: 10%;
+        left: 64%;
+        display: block;
+        width: 30%;
+        /*background: #000;*/
+        height: 20%;
+    }
+    .h5{
+        left:34%;
+        top:8%;
+    }
+    .ios {
+        left: 6%;
+    }
+
+    #iossolu {
+        position: absolute;
+    display: block;
+    top: 60%;
+    width: 65%;
+    left: 15%;
+    height: 40%;
+	}
+	#mtbanner{
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:100px;
+	}
+	#banner{
+		width:100%;
+	}
+	#mtbanner a{
+		display:inline-block;
+		position:absolute;
+		z-index:9;
+	}
+	#mtclose{
+		width: 20px;
+		height: 20px;
+		padding: 5px;
+		position: absolute;
+		right: 0;
+		z-index: 999;
+	}
+	#mtclose img{
+		width:100%;
+	}
+	#mtclose:active{
+		opacity: 0.8;
+	}	
+    #imgbj{
+        width: 100%;
+        max-width: 750px;
+        margin: auto;
+        display: block;
+    }
+    </style>
+</head>
+
+<body id="img">
+    <a href="#" id="wximg" onclick="colse()" style="width:0;position:absolute;disoplay:block;padding-bottom: 1000px;z-index: 999;">
+        <img  src="./01.png"  alt="2"  style="width: 100%;">
+    </a>
+    <div id="main" style="width: 100%;height: 100%;max-width: 380px;margin: auto;position: relative;">
+        <a href="#" onclick="is_weixn('')" class="android"></a>
+        <a href="http://h5.173uu.com/"  class="h5"></a>
+        <a href="./apple_solution.html"  class="ios"></a>
+        <a href="./apple_solution.html" id="iossolu"  ></a>
+        <img id="imgbj" src="./images/登录器下载H5-1.jpg" alt="1">
+        <script>
+        var ua = navigator.userAgent.toLowerCase(); //获取浏览器类型
+        if (/android|adr/gi.test(ua)) { //安卓
+            document.getElementById('iossolu').style = "display:none";
+            document.getElementById('imgbj').src = "./images/登录器下载H5-1.jpg";
+        } else if (/\(i[^;]+;( U;)? CPU.+Mac OS X/gi.test(ua)) { //ios
+            document.getElementById('imgbj').src = "./images/登录器下载H5-APPLE.png";
+        } else if (/iPad/gi.test(ua)) { // ipad
+        }
+        </script>
+		<!--<div id="mtbanner">
+			<div id="mtclose" onclick="closemt()"><img  src="./close.png" alt="1"></div>
+			<a href="http://dsmt.zhaost.com/index.html"><img id="banner" src="./banner.jpg" width="100%"  alt="1"></a>
+		</div>-->
+    </div>
+    <script>
+    var bodyElem = document.getElementsByTagName('body')[0];
+    var htmlElem = document.getElementsByTagName('html')[0];
+    htmlElem.style['overflow-y'] = 'hidden';
+    htmlElem.style['height'] = '100%';
+    bodyElem.style['overflow-y'] = 'hidden';
+    bodyElem.style['height'] = '100%';
+
+    function is_weixn(item) {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById('wximg').style.width = 100 + '%';
+            return
+        } else {
+            document.getElementById('wximg').style.width = 0;
+            console.log(item);
+            if (item === 'ios') {
+                window.location.href = "itms-services://?action=download-manifest&url=https://cdn.kazhifu.com/mobilegame/mobile/IOS/itms/shentumulti.plist";
+            } else {
+                window.location.href = "https://miniclient.oss.aliyuncs.com/mobilegame/mobile/shentu.apk";
+            }
+            return
+        }
+    }
+
+    function colse() {
+        document.getElementById('wximg').style.width = 0;
+
+    }
+	function closemt (){
+		document.getElementById('mtbanner').style.display='none';
+	}
+    window.onload = function() {
+        var height = document.getElementById('main').offsetHeight;
+        var imgheight = document.getElementById('imgbj').offsetHeight;
+        if(imgheight > height){//如果图片高度大于设备高度则根据高度自适应
+            document.getElementById('imgbj').style.height = height+'px';
+            document.getElementById('imgbj').style.width = 'auto';
+        }
+        // var width = document.getElementById('main').offsetWidth;
+        // if()
+    // var maxHeight = 0;
+    // var relHeight = 0;
+    // if (document.documentElement.clientHeight > maxHeight) {
+    // var maxHeightmaxHeight = document.documentElement.clientHeight; /* 获取设备高度 */
+    // relHeight = maxHeightmaxHeight; /* 根据获取的设备高度，减去顶部轮播和底部导航，以及每个栏目的自身高度，除以6 */
+    //     }
+    //     console.log(relHeight);
+    //     document.getElementById('img').style.height = relHeight + 'px';
+    //     document.getElementById('img').style.height = relHeight + 'px';
+    //     console.log(document.getElementById('img').style.height);
+    };
+    document.body.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, { passive: false });
+    </script>
+</body>
+
+</html>

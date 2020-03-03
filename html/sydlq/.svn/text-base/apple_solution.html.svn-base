@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>“未受信任的企业级开发者…”解决教程</title>
+		<script type="text/javascript">
+			var pixelRatio=1/window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio+',maximum-scale='+pixelRatio+'" />');
+			var html=document.getElementsByTagName('html')[0];
+			html.style.fontSize=html.getBoundingClientRect().width/10+'px';
+		</script>
+		<link rel="stylesheet" href="css/H5_word.css" />
+	</head>
+	<body>
+		<div class="container">
+			<dl class="">
+				<dt class="">1、扫描二维码，苹果设备提示如下图，请点击“打开外部应用程序”</dt>
+				<dd class="mt20 tc">
+					<img  class="inline-block w540 "  src="images/1.jpg" />
+				</dd>
+			</dl>
+			<dl class="mt40">
+				<dt class="">2、接着会提示如下图，请点击【安装】</dt>
+				<dd class="mt20 tc">
+					<img class="inline-block w540 "  src="images/2.jpg" />
+				</dd>
+			</dl>
+			<dl class="mt40">
+				<dt class="">3、在设备图标中找到【神途总登录器】</dt>
+				<dd class="mt20 tc">
+					<img class="inline-block w300 " src="images/3.jpg"/>
+				</dd>
+			</dl>
+			<dl class="mt40">
+				<dt class="">4、点击【神途总登录器】图标，出现如下图提示：请记住红线部分的文件名：</dt>
+				<dd class="mt20 tc">
+					<img  class="inline-block w540 "  src="images/4.jpg" />
+				</dd>
+			</dl>
+			<dl class="mt40">
+				<dt class="">5、然后在设备中依次点击进入【设置》》通用》》描述文件与设备管理】，找到刚才同名的描述文件</dt>
+				<dd class="mt20 tc">
+					<img class="inline-block w540 "  src="images/5.jpg" />
+				</dd>
+			</dl>
+			<dl class="mt40">
+				<dt class="">6、点击该描述文件，选择【信任】，然后回去点击【神途总登录器】图标就能正常打开啦！</dt>
+				<dd class="mt20 tc">
+					<img  class="inline-block w540 "  src="images/6.jpg"  />
+				</dd>
+			</dl>ss
+		</div>
+	</body>
+</html>

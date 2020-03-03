@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="ces2"/>
+    <meta name="description" content="<p>ces2</p>"/>
+    <title>ces2-找神途</title>
+    <!-- <base href="https://www.zhaost.com/"/> -->
+    <base href="127.0.0.1"/>
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/newdistrict.css">
+    <link rel="stylesheet" href="css/openlist.css">
+    <link rel="stylesheet" href="js/alert.css">
+    <link rel="stylesheet" type="text/css" href="js/miaov_style.css" />
+    <script type="text/javascript" src="js/miaov.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+    </script>
+    <style type="text/css">
+        /*---------顶部导航---------*/
+        .top_fix {
+            width: 100%;
+            top: 0px;
+            z-index: 9999;
+            position: fixed;
+            background: #FFF;
+        }
+
+        .top {
+            background: url(images/top_bg.jpg) repeat-x;
+            height: 37px;
+            margin: 0px 0px 1px 0px;
+            line-height: 36px;
+            color: #DDD;
+        }
+
+        .top a {
+            margin: 0px 6px;
+            color: #777;
+        }
+
+        .top_content,
+        .nav_crl {
+            margin: 0px auto;
+            width: 980px;
+            overflow: hidden;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        /*---------主导航---------*/
+        .mainnav {
+            background: url(images/nav_bg.jpg) repeat-x bottom;
+            height: 84px;
+            border-top: 0px;
+            width: 100%;
+            margin-top: 37px;
+            zoom: 1;
+        }
+
+        .mainmenu {
+            width: 978px;
+            margin: 0px auto;
+        }
+
+        .logo {
+            border-right: 1px solid #EBEBEB;
+            background: url(images/logo.png) no-repeat 5px 1px;
+            width: 200px;
+            text-indent: -9999px;
+            display: block;
+            height: 80px;
+        }
+
+        .nav {
+            float: left;
+            height: 84px;
+            width: 480px;
+            border-left: 1px solid #FFF;
+            border-right: 1px solid #EBEBEB;
+            overflow: hidden;
+            padding: 0px 0px 0px 20px;
+        }
+
+        .nav ul {
+            margin: 12px 0px 0px 0px;
+        }
+
+        .nav a {
+            font-size: 14px;
+            color: #666;
+            line-height: 28px;
+            margin: 0px 14px 0px 0px;
+        }
+
+        .nav a:hover {
+            color: #FF6600;
+        }
+
+        .nav .nav_cat {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav_crl {
+            background: url(images/nav_crl.png);
+            width: 100%;
+            height: 9px;
+        }
+
+        /*---------按钮---------*/
+        .button {
+            position: relative;
+            float: left;
+            border-left: 1px solid #FFF;
+            height: 65px;
+            width: 250px;
+            padding: 5px 0px 0px 15px;
+        }
+
+        .button li {
+            float: left;
+            margin: 5px 10px 0px 0px;
+            overflow: hidden;
+            display: inline;
+        }
+
+        /*---------底部---------*/
+        .footer {
+            width: 100%;
+            height: 110px;
+            margin: 0px auto;
+            padding-top: 0px;
+            text-align: center;
+            line-height: 20px;
+            color: #615c60;
+            overflow: hidden;
+            clear: both;
+        }
+
+        .footer p {
+            height: 22px;
+            margin: 0;
+        }
+
+        .footer a {
+            color: #333;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .footer a:hover {
+            color: #333;
+        }
+
+        .adFloat {
+            position: fixed;
+            z-index: 1010;
+            top: 50px;
+        }
+
+        .adLocalityLeft {
+            left: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .adLocalityRight {
+            right: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .adFloat .adCon-Box {
+            margin: 3px;
+            overflow: hidden;
+            min-width: 100px;
+            min-height: 70px;
+        }
+
+        .adFloat .actionBar {
+            height: 25px;
+            padding: 0 5px;
+            border-top: 1px solid #ccc;
+            background: url(images/icon_adfloat.png) repeat-x 0 -25px;
+        }
+
+        .adFloat .actionBar a {
+            width: 52px;
+            height: 19px;
+            float: right;
+            margin-top: 3px;
+            background: url(images/icon_adfloat.png) no-repeat 0 -60px;
+            text-indent: -999px;
+            overflow: hidden;
+        }
+
+        .adFloat .actionBar a:hover {
+            background-position: -55px -60px;
+        }
+
+        .adFloat a.close {
+            background: #fff url(images/icon_adfloat.png) no-repeat -6px -8px;
+            width: 13px;
+            height: 13px;
+            display: block;
+            position: absolute;
+            top: -2px;
+            right: 0;
+            text-indent: -999px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        .adFloat h2 {
+            font-size: 14px;
+            font-weight: 800;
+            background-color: #cb0000;
+            color: #fff;
+            line-height: 24px;
+            text-indent: 10px;
+            margin: 3px 3px 0;
+        }
+
+        .adFloat h3 {
+            font-size: 12px;
+            font-weight: normal;
+            background-color: #f7f7f7;
+            color: #666;
+            line-height: 30px;
+            text-indent: 10px;
+            clear: both;
+        }
+
+        .adFloat .adCon-Box .module ul {
+            font-size: 0;
+            line-height: 0;
+        }
+
+        .adFloat .adCon-Box .module ul li {
+            font-size: 12px;
+            line-height: 1.5em;
+            padding: 2px 4px;
+        }
+
+        .adFloat .adCon-Box .module ul li a {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
+            display: block;
+            word-wrap: normal;
+        }
+
+        .adFloat .adCon-Box .module ul p {
+            font-size: 12px;
+            line-height: 1.5em;
+            padding: 2px 4px 0;
+        }
+
+        .adFloat .line {
+            border-top: 1px dotted #ccc;
+            height: 5px;
+            margin-top: 5px;
+        }
+
+        .hot-tag {
+            margin: 0 auto;
+            padding: 10px 0 0;
+        }
+
+        .hot-tag li {
+            float: left;
+            padding: 0 5px;
+            margin-bottom: 8px;
+        }
+
+        .hot-tag li a {
+            display: block;
+            padding: 0 5px;
+            text-decoration: none;
+            font-size: 12px;
+            border: 1px solid #d3d3d3;
+            line-height: 22px;
+        }
+
+        .hot-tag li a:hover {
+            background-color: #fff;
+            color: #cb0000;
+            border-color: #bbb;
+        }
+
+        .hot-tag li.hilite a {
+            background-color: #ff7a00;
+            color: #fff;
+            border-color: #d55e00;
+        }
+
+        .hot-tag li.hilite a:hover {
+            background-color: #ff4e00;
+            border-color: #c02400;
+        }
+
+        .adshow {
+            display: ;
+        }
+
+        .adhidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="last-content">
+        <div class="top_fix">
+            <div class="top">
+                <div class="top_content">
+                    <div class="left">
+                        |<a href="javascript:void(0)" onclick="SetHome(this,window.location)">设为首页</a>
+                        <a href="javascript:void(0)" onclick="AddFavorite(window.location,document.title)">加入收藏</a>|
+                        <a href="http://www.173uu.com/business.html" target="_blank"><img src="images/kf.gif"></a>
+                    </div>
+                    <div class="right">
+                        |<a href="list.html" target="_self"><span style="color:#FF3300">火爆人气版本推荐</span></a>
+                        <a href="http://serverlist.oss-cn-hangzhou.aliyuncs.com/zhaost/zhaost.exe"    target="_self"><span
+                                style="color:#0099ff">添加到桌面图标▼</span><img src="images/new.gif" class="hotpic"></a>|
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainnav">
+            <div class="mainmenu">
+                <div style="float:left; "><a href="list.html" class="logo">找神途</a></div>
+                <div class="nav">
+                    <div id="div1">
+                        <a class="green">1.70复古</a>
+                        <a>1.76精品</a>
+                        <a>1.76微变</a>
+                        <a class="blue">1.76轻变</a>
+                        <a>1.76合击</a>
+                        <a class="red">1.76复古</a>
+                        <a class="purple">1.80王者</a>
+                        <a>1.80极品</a>
+                        <a>1.80经典</a>
+                        <a class="blue">1.80战神</a>
+                        <a>1.80合击</a>
+                        <a class="blue">1.80迷失</a>
+                        <a>1.80疯狂</a>
+                        <a>1.80金币</a>
+                        <a class="green">1.80绿色</a>
+                        <a class="purple">1.85精品</a>
+                        <a>1.85散人</a>
+                        <a>1.85王者合击</a>
+                        <a class="green">1.95神龙合击</a>
+                        <a>1.95合击</a>
+                        <a>1.95金牛无内功</a>
+                        <a class="purple">涿鹿中原</a>
+                        <a>1.85战神</a>
+                        <a class="red">1.80嘟嘟</a>
+                        <a class="green">1.80沉默</a>
+                        <a>1.85仙剑</a>
+                        <a class="blue">1.76蓝月</a>
+                        <a class="green">1.76原始</a>
+                        <a class="blue">1.70梁山</a>
+                        <a class="green">1.70丽江</a>
+                        <a href="#/" class="red">1.85执着</a>
+                        <a class="red">1.85灭世</a>
+                        <a>80合击</a>
+                        <a>1.70</a>
+                        <a>1.76</a>
+                        <a>1.80</a>
+                        <a>1.85</a>
+                        <a>1.95</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <a href="javascript:;"
+                       onclick="StarGmae(this,'https://serverlist.oss-cn-hangzhou.aliyuncs.com/shentuol/shentuol.exe','true','http://h5.173uu.com/','true','universal')"
+                       style="margin-bottom:50px;"><img src="images/list4_stfb.jpg" onclick="_czc.push(['_trackEvent',  '点击', '弹出万能登录器下载对话框', '万能登录器','5','dianji']);" style="margin-left:32px;"></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="list-content" id="list-content" v-cloak>
+        <!-- list nav -->
+        <div class="bl-nav">
+            <span class="home {active_index}">
+                <a href="list.html" onclick="_hmt.push(['_trackEvent', '点击', '打开新闻首页', '首页']);">
+                首页
+                <img src="img/icon_plane.png" alt="" srcset="">
+                </a>    
+            </span>
+
+            <span class="active">
+                <a href="list_new_articles.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转最新咨询', '最新资讯']);">
+                    最新资讯
+                </a>
+            </span>
+
+            <span class="">
+                <a href="list_game_evaluation.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转游戏评测', '游戏评测']);">
+                    游戏评测
+                </a>
+            </span>
+
+            <span class="">
+                <a href="list_game_data.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转游戏资料', '游戏资料']);">
+                    游戏资料
+                </a>
+            </span>
+
+            <span class="">
+                <a href="list_player_att.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转玩家关注', '玩家关注']);">
+                	玩家关注
+                </a>
+            </span>
+        </div>
+
+        <!-- bread nav -->
+        <div class="bread">
+            <span>您现在的位置：</span>
+            <span>找神途&emsp;>&emsp; <a href="list_new_articles.html">最新资讯</a> &emsp;>&emsp;正文</span>
+        </div>
+
+        <div class="con-box">
+            <div class="atricles-con">
+                <div class="article-list-con">
+                    <div class="article-list">
+                       <h1 class="new-title">ces2-找神途</h1>
+                       <p class="new-info">
+                        发布时间：2020-03-14&emsp;&emsp;信息来源：神途官网
+                       </p>
+                       <div class="new-content">
+                        <p>ces2</p>
+                       </div>
+                       
+                       <div class="gotozhaost">
+                           最全最好的神途版本，尽在
+                           <a href="http://www.zhaost.com">www.zhaost.com</a>
+                        </div>
+                        
+                        <div class="page-box">
+        <div class="near-news">
+            <p>
+            <span>上一篇：</span>
+            <a href="./new_articles_44.html">ces1</a>
+        </p>
+            <p>
+            <span>下一篇：</span>
+            <a href="./new_articles_46.html">ces3</a>
+        </p>
+        </div>
+        <a class="gotolist" href="list_new_articles.html">返回列表</a>
+    </div>
+                    </div>
+                </div>
+
+                <div class="open-list">
+                    <div class="tab-box">
+                        <div class="tabs">
+                            <p class="active">最新开区</p>
+                            <p>明日开区</p>
+                            <p>经典老区</p>
+                        </div>
+                        <p class="more-open-list">
+                            <a href="list.html" onclick="_hmt.push(['_trackEvent', '打开', '打开更多精彩版本（底）', '更多精彩版本']);">
+                                <span>更多精彩版本</span>
+                                <img src="img/icon_more_red.png" alt="" srcset="">
+                            </a>    
+                        </p>
+                    </div>
+                    <div class="open-list-table">
+                        <table>
+                            <thead>
+                                <td>游戏名称</td>
+                                <td>服务器名</td>
+                                <td>开服时间</td>
+                                <td>版本介绍</td>
+                                <td>开始游戏</td>
+                                <td>游戏网站</td>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(zone,index) in lastzones">
+                                    <td>{{zone['groupname']}}</td>
+                                    <td>{{zone['gamename']}}</td>
+                                    <td>{{zone['addtime']}}</td>
+                                    <td>{{zone['gamedesc']}}</td>
+                                    <td><span class="start-game" @click="startGame(this,zone['pcurl'],zone['gameweb'],zone['h5url'],false,'lastzones')">开始游戏</span></td>
+                                    <td>
+                                        <span class="comein-game">
+                                            <a :href="zone['gameweb']" target="_blank" onclick="_hmt.push(['_trackEvent', '打开', '打开代理网站【最新开区】', '点击进入']);">点击进入</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="open-list-table">
+                        <table>
+                            <thead>
+                                <td>游戏名称</td>
+                                <td>服务器名</td>
+                                <td>开服时间</td>
+                                <td>版本介绍</td>
+                                <td>开始游戏</td>
+                                <td>游戏网站</td>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(zone,index) in temorrowzones">
+                                    <td>{{zone['groupname']}}</td>
+                                    <td>{{zone['gamename']}}</td>
+                                    <td>{{zone['addtime']}}</td>
+                                    <td>{{zone['gamedesc']}}</td>
+                                    <td><span class="start-game" @click="startGame(this,zone['pcurl'],zone['gameweb'],zone['h5url'],false,'temorrowzones')">开始游戏</span></td>
+                                    <td>
+                                        <span class="comein-game">
+                                            <a :href="zone['gameweb']" target="_blank" onclick="_hmt.push(['_trackEvent', '打开', '打开代理网站【明日开区】', '点击进入']);">点击进入</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="open-list-table">
+                        <table>
+                            <thead>
+                                <td>游戏名称</td>
+                                <td>服务器名</td>
+                                <td>开服时间</td>
+                                <td>版本介绍</td>
+                                <td>开始游戏</td>
+                                <td>游戏网站</td>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(zone,index) in classiczones">
+                                    <td>{{zone['groupname']}}</td>
+                                    <td>{{zone['gamename']}}</td>
+                                    <td>{{zone['addtime']}}</td>
+                                    <td>{{zone['gamedesc']}}</td>
+                                    <td><span class="start-game" @click="startGame(this,zone['pcurl'],zone['gameweb'],zone['h5url'],false,'classiczones')">开始游戏</span></td>
+                                    <td>
+                                        <span class="comein-game">
+                                            <a :href="zone['gameweb']" target="_blank" onclick="_hmt.push(['_trackEvent', '打开', '打开代理网站【经典老区】', '点击进入']);">点击进入</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="more-open-list-btn">
+                        <a href="list.html" onclick="_hmt.push(['_trackEvent', '打开', '打开更多新区等你来战', '更多新区等你来战']);">
+                            <img src="img/icon_active.png" alt="">
+                            <span>更多新区，等你来战！</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+			
+            <div class="new-district">
+                <div class="district-tit">
+                    <span class="tit">新区推荐</span>
+                    <p @click="nextpage">
+                       <img src="./img/icon_new.png" alt="" srcset="">
+                       <span>换一批</span>
+                    </p>
+                </div>
+                <transition name='newzone'>
+                    <div v-show="show">
+                        <div class="district-item" v-for="(zone,index) in showzones">
+                            <div class="district-item-tit">
+                                <p>
+                                    {{zone['groupname']}}
+                                </p>
+                                <span>{{zone['addtime']}}点火爆开服</span>
+                                <img src="./img/icon_hot.gif" alt="" srcset="">
+                            </div>
+                            <div class="district-item-desc">
+                                <div class="desc-box">
+                                    {{zone['gamedesc']}}
+                                </div>
+                                <span class="btn-start" @click="startGame(this,zone['pcurl'],zone['gameweb'],zone['h5url'],false,'right')">开始游戏</span>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+                <div class="more-district-btn">
+                    <a href="list.html" onclick="_hmt.push(['_trackEvent', '打开', '打开更多精彩版本（右）', '更多精彩版本']);">
+                        <span>更多精彩版本</span>
+                        <img src="img/icon_arc_more.png" alt="" srcset="">
+                    </a>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>网络文化经营许可证:浙网文【2015】0337-107号 |
+            增值电信业务经营许可证:浙B2-20110064 |
+            文网游备字[2011]C-RPG152号 |
+            京新出音[2012]86号 ISBN 978-7-89429-043-4</p>
+        <p>《互联网文化管理暂行规定》|
+            《网络游戏管理暂行办法》|
+            浙ICP备11003407号
+            本游戏适合18岁以上的玩家进入
+            <script>
+                document.getElementById("TopAdArea").innerHTML = strTopAd;
+
+                function getParams() {
+                    var URLParams = new Object();
+                    var aParams = document.location.search.substr(1).split('&');
+                    for (i = 0; i < aParams.length; i++) {
+                        var aParam = aParams[i].split('=');
+                        URLParams[aParam[0]] = aParam[1];
+                    }
+                    return URLParams;
+                }
+
+                var ret = getParams();
+                var shentu_subname = "list";
+
+                if (typeof (ret['pid']) != "undefined" && ret['pid'] != "")
+                    shentu_subname = "list." + ret['pid'];
+
+                tid = 14856;
+
+                if (location.href.indexOf('wg.zhaost.com') != -1) {
+                    tid = 14856;
+                    shentu_subname = "wg.zhaost"
+                }
+
+                if (document.referrer == "") {
+                    tid = 14856;
+                    if (shentu_subname == "list") shentu_subname = "zhaost.list";
+
+                    if (location.href.indexOf('www.zhaost.com') != -1) {
+                        if (parseInt(ret['tid']) > 0) //吴斌一起玩神途新渠道测试
+                        {
+                            tid = ret['tid'];
+                            shentu_subname = "zhaost";
+                        }
+                    }
+                }
+                else if (document.referrer.indexOf('zhaost.com') != -1) {
+                    tid = 14856;
+                    shentu_subname = "zhaost"
+                }
+                else if (document.referrer.indexOf('www.st123.com') != -1) {
+                    tid = 14856;
+                    shentu_subname = "st123"
+                }
+                else if (document.referrer.indexOf('baidu.com') != -1) {
+                    tid = 14856;
+                    shentu_subname = "baidu"
+
+                    if (typeof (ret['pid']) != "undefined" && ret['pid'] != "")
+                        shentu_subname += "." + ret['pid'];
+                }
+                else if (document.referrer.indexOf('173uu.com') != -1 || document.referrer.indexOf('shentuol.com') != -1) {
+                    tid = 14856;
+                    shentu_subname = "173uu"
+                }
+                else if (document.referrer.indexOf('zhaosf.com') != -1 || document.referrer.indexOf('88pk.com') != -1 || document.referrer.indexOf('555wcj.com') != -1 || document.referrer.indexOf('dwq123.com') != -1 || document.referrer.indexOf('81f.com') != -1 || document.referrer.indexOf('pk123.com') != -1 || document.referrer.indexOf('dux8.com') != -1 || document.referrer.indexOf('sf805.com') != -1 || document.referrer.indexOf('926.com') != -1 || document.referrer.indexOf('9pk.com') != -1 || document.referrer.indexOf('8uu.com') != -1 || document.referrer.indexOf('99j.com') != -1 || document.referrer.indexOf('66sf.com') != -1 || document.referrer.indexOf('10ok.com') != -1 || document.referrer.indexOf('500sf.com') != -1 || document.referrer.indexOf('777uc.com') != -1 || document.referrer.indexOf('ahxp168.com') != -1 || document.referrer.indexOf('jjj.com') != -1) {
+                    tid = 14856;
+                    shentu_subname = "hifbz"
+                }
+                else {
+                    if (location.href.indexOf('www.zhaost.com') != -1) {
+                        if (parseInt(ret['tid']) > 0) //吴斌一起玩神途新渠道测试
+                        {
+                            tid = ret['tid'];
+                            shentu_subname = "zhaost";
+                        }
+                    }
+                }
+
+
+                subname = shentu_subname;
+                document.write("<scri" + "pt charset=\"gb2312\" language=\"javascript\" src=\"https://stat.173uu.com/browsecount.do?tid=" + tid + "&subname=" + escape(subname) + "&referer=" + escape(document.referrer) + "\"></" + "script>");
+            </script>
+            <script type="text/javascript" src="https://update-sl2.173uu.com/stat.php?OpenType=1&gid=2"></script>
+            <script>
+                var source = 0;
+                if (window.location.hostname.indexOf('tg.3shentu.com') != -1) source = 8;
+                else if (window.location.hostname.indexOf('bdtg.hzyotoy.com') != -1) source = 1;
+                else if (window.location.hostname.indexOf('tg.st7000.com') != -1) source = 2;
+                else if (window.location.hostname.indexOf('tg.3198m.net') != -1) source = 7;
+                else if (window.location.hostname.indexOf('tg.st7070.com') != -1) source = 10;
+                var SS_TID = 2;
+                document.write("<scri" + "pt charset=\"gb2312\" language=\"javascript\" src=\"https://statad.hzyotoy.com/statall.php?AdID=2" + "&Source=" + source + "&Param2=" + SS_TID + "&Param1=" + escape(subname) + "&referer=" + escape(document.referrer) + "\"></" + "script>");
+            </script>
+
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260575931'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260575931%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        </p>
+        <p>CopyRight &copy; 2009-2013 杭州蜗牛网络科技有限公司, All rights reserved. 地址：杭州东方电子商务园15幢5楼505室 联系电话：0571-56010090
+            <!--a href="aboutus.html" target="_blank">公司介绍</a> | <a href="contactus.html" target="_blank">联系我们</a-->
+        </p>
+    </div>
+	
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/alert.min.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/api.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ca88f81ef448407218dabf1c349718b9";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

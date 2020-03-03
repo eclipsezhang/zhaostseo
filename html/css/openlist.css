@@ -1,0 +1,138 @@
+.open-list{
+    background: #fff;
+    box-sizing: border-box;
+    padding: 20px 25px;
+    margin-top: 25px;
+}
+.tab-box{
+    width: 100%;
+    border-bottom: 1px solid #DBDBDB;
+}
+.tab-box::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.tabs{
+    font-size: 0;
+    font-size: 14px;
+    float: left;
+}
+.tabs p{
+    display: inline-block;
+    width: 104px;
+    height: 39px;
+    font-family: PingFangSC-Regular;
+    color: #666666;
+    line-height: 39px;
+    text-align: center;
+    border: 1px solid #DBDBDB;
+    margin-right: 6px;
+    border-bottom: 0;
+    top: 1px;
+    position: relative;
+    background: #fff;
+    cursor: pointer;
+}
+.tabs p.active{
+    border-top: 2px solid #D43030;
+    border-bottom: 1px solid #fff;
+}
+.more-open-list{
+    line-height: 15px;
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.more-open-list a{
+    text-decoration: none;
+    color: #D43030;
+}
+.more-open-list img{
+    display: inline-block;
+    width: 12px;
+    height: 15px;
+    vertical-align: top;
+}
+.open-list-table{
+    width: 100%;
+    margin-top: 13px;
+    display: none;
+}
+.open-list-table table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+.open-list-table table thead{
+    color: #fff;
+    background: #FF6601;
+    line-height: 30px;
+}
+.open-list-table table thead td:nth-child(1){
+    width: 80px;
+}
+.open-list-table table thead td:nth-child(2){
+    width: 100px;
+}
+.open-list-table table thead td:nth-child(3){
+    width: 60px;
+}
+.open-list-table table thead td:nth-child(4){
+    width: 140px;
+}
+.open-list-table table thead td:nth-child(5){
+    width: 60px;
+}
+.open-list-table table thead td:nth-child(6){
+    width: 60px;
+}
+.open-list-table table td{
+    border: 1px solid #DBDBDB;
+}
+.open-list-table table tbody td{
+    padding: 5px 5px;
+    background-color: rgb(255, 251, 186);
+}
+.open-list-table table tbody td:nth-child(3),
+.open-list-table table tbody td:nth-child(4)
+{
+    text-align: left;
+}
+.start-game,.comein-game{
+    background: #59BDFF;
+    color: #fff;
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.comein-game{
+    background: #66CC01;
+}
+.comein-game a{
+    color:#fff;
+    text-decoration: none;
+}
+.more-open-list-btn{
+    width: 300px;
+    background: #D43030 ;
+    margin: 17px auto 0;
+    text-align: center;
+    height: 32px;
+    font-size: 14px;
+    line-height: 32px;
+}
+.more-open-list-btn img{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.more-open-list-btn a{
+    color: #FDEC20;
+    text-decoration: none;
+    display: block;
+}
