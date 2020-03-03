@@ -12,11 +12,17 @@ Api.prototype.formatTime = function(time){
 }
 
 Api.prototype.request = function(act,data){
+    jQuery.support.cors = true;
     var response = $.ajax({
         url:this.baseUrl+'?act='+act,
         data:data||{},
+        crossDomain: true,
+        // headers: {
+        //     'Access-Control-Allow-Origin': '*'
+        // },
         async:false
     });
+    console.log(response);
     var data = response.status===200?JSON.parse(response.responseText):''
     if(typeof data === 'object'){
         return data || [];
@@ -56,5 +62,13 @@ Api.prototype.getNews = function(data){
         pageindex:data.pageindex || 1,
         pagesize:data.pagesize || 1
     });
+}
+// 请求上一页下一页
+Api.prototype.getPageCon = function(data){
+    console.log(data)
+    return this.request('beforeafter', {
+        id: data.id,
+        type: data.type
+    })
 }
 

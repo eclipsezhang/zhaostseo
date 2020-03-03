@@ -5,6 +5,9 @@
 body{
     background:#F2F2F2;
 }
+img{
+    border:none;
+}
 [v-cloak]{
     display: none;
 }
@@ -39,6 +42,7 @@ body{
     color: #D43030;
 }
 .bl-nav span.home img{
+    border: none;
     display: block;
     position: absolute;
     top: 3px;
