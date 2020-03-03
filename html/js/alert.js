@@ -1,10 +1,10 @@
 
-	function StarGmae(dom, pcurl, murl, h5url, sywndlq,source) {//å¼€å§‹æ¸¸æˆ
+	function StarGmae(dom, pcurl, murl, h5url, sywndlq,source) {//¿ªÊ¼ÓÎÏ·
 		var actionMap = {
 			right:'',
-			lastzones:'ã€æœ€æ–°å¼€åŒºã€‘',
-			temorrowzones:'ã€æ˜æ—¥å¼€åŒºã€‘',
-			classiczones:'ã€ç»å…¸è€åŒºã€‘'
+			lastzones:'¡¾×îĞÂ¿ªÇø¡¿',
+			temorrowzones:'¡¾Ã÷ÈÕ¿ªÇø¡¿',
+			classiczones:'¡¾¾­µäÀÏÇø¡¿'
 		}
 		var html = '';
 		var height = '';
@@ -12,7 +12,7 @@
 		if (pcurl && murl || murl && h5url || pcurl && h5url) {
 			var M = {};
 			if (pcurl) {
-				html += "<a style='margin-top:15px;display:block; class='dy' href='" + pcurl + "' onclick=\"_hmt.push(['_trackEvent','ä¸‹è½½'ï¼Œ'ç‚¹å‡»ä¸‹è½½ç«¯æ¸¸"+actionMap[source]+"','ç«¯æ¸¸ä¸‹è½½'])\"><img src='img/pcd.png' alt=''></a>";
+				html += "<a style='margin-top:15px;display:block; class='dy' href='" + pcurl + "' onclick=\"_hmt.push(['_trackEvent','ÏÂÔØ'£¬'µã»÷ÏÂÔØ¶ËÓÎ"+actionMap[source]+"','¶ËÓÎÏÂÔØ'])\"><img src='img/pcd.png' alt=''></a>";
 				i++;
 			}
 			if (murl) {
@@ -20,11 +20,11 @@
 				if (sywndlq) {
 					html += "<a style='margin-top:15px;display:block; class='sy' href='javascript:;' onclick='register(this)'><img src='img/syd.png' alt=''></a>";
 				} else {
-					html += "<a style='margin-top:15px;display:block; class='sy' target='_blank' href='" + murl + "' onclick=\"_hmt.push(['_trackEvent','ä¸‹è½½'ï¼Œ'æ‰“å¼€ä»£ç†æ‰‹æ¸¸ç½‘ç«™"+actionMap[source]+"','æ‰‹æ¸¸ä¸‹è½½'])\"><img src='img/syd.png' alt=''></a>";
+					html += "<a style='margin-top:15px;display:block; class='sy' target='_blank' href='" + murl + "' onclick=\"_hmt.push(['_trackEvent','ÏÂÔØ'£¬'´ò¿ª´úÀíÊÖÓÎÍøÕ¾"+actionMap[source]+"','ÊÖÓÎÏÂÔØ'])\"><img src='img/syd.png' alt=''></a>";
 				}
 			}
 			if (h5url) {
-				html += "<a style='margin-top:15px;display:block; class='h5' target='_blank' href='" + h5url + "' onclick=\"_hmt.push(['_trackEvent','ä¸‹è½½'ï¼Œ'æ‰“å¼€H5æ¸¸æˆ"+actionMap[source]+"','h5ä¸‹è½½'])\"><img src='img/h5d.png' alt=''></a>";
+				html += "<a style='margin-top:15px;display:block; class='h5' target='_blank' href='" + h5url + "' onclick=\"_hmt.push(['_trackEvent','ÏÂÔØ'£¬'´ò¿ªH5ÓÎÏ·"+actionMap[source]+"','h5ÏÂÔØ'])\"><img src='img/h5d.png' alt=''></a>";
 				i++;
 			}
 			//M.dialog6.close()
@@ -32,17 +32,17 @@
 			M.dialog6 = jqueryAlert({
 				'title': '',
 				'style': 'pc',
-				//'content' :  "<div class='fieldset'><a class='dy' href='"+dom.getAttribute('tarurl')+"'>ç«¯æ¸¸</a><a class='sy' href='"+dom.getAttribute('tarurl')+"'>æ‰‹æ¸¸</a><img src='images/tk.png' border='0'/></div>",
+				//'content' :  "<div class='fieldset'><a class='dy' href='"+dom.getAttribute('tarurl')+"'>¶ËÓÎ</a><a class='sy' href='"+dom.getAttribute('tarurl')+"'>ÊÖÓÎ</a><img src='images/tk.png' border='0'/></div>",
 				'content': html,
 				'width': '300px',
 				'height': i === 3 ? '295px' : '220px',
 				'modal': true,
 				'buttons': {
-					'å…³é—­': function () { },
+					'¹Ø±Õ': function () { },
 				}
 			})
 			M.dialog6.show();
-			$('.alert-btn-close').html('Ã—');
+			$('.alert-btn-close').html('¡Á');
 			$('.alert-btn-box').html('');
 		} else if (murl) {
 			//window.open(dom.getAttribute('tarurl'))
