@@ -22,10 +22,12 @@ var app = new Vue({
         this.show = true;
         //列表页数据
         this.type = document.querySelector('.active').getAttribute('type');
-        this.source = document.querySelector('.active').getAttribute('source');
         this.type && this.getNews({type:this.type});
         this.pagetion(this.totalPages);
-        this.source && this.getPageCon(this.source);
+        var that = this;
+        setInterval(function(){
+            that.nextpage();
+        },5000);
     },
     methods: {
         getAllData:function(){
@@ -33,7 +35,7 @@ var app = new Vue({
             this.lastzones = this.oApi.getRecommend(1);
             this.temorrowzones = this.oApi.getRecommend(2);
             this.classiczones = this.oApi.getRecommend(3);
-            this.showzones = this.oApi.getNewZones().slice(0,10);
+            this.showzones = this.newzones.slice(0,10);
         },
         nextpage:function(){
             this.show = false;
@@ -104,19 +106,7 @@ var app = new Vue({
                     }
                 }); 
             });
-        },
-        //上一页下一页
-        getPageCon:function(source){
-            var hrefData = window.location.href.split('/')
-            var propsStr = hrefData[hrefData.length-1];
-            var propsData = propsStr.split('_');
-            var id = propsData.pop().split('.')[0];
-            console.log(this.oApi.getPageCon({
-                id:id,
-                type:source
-            }));
         }
-        
     },
 
 });

@@ -20,9 +20,15 @@ Api.prototype.request = function(act,data){
         // headers: {
         //     'Access-Control-Allow-Origin': '*'
         // },
-        async:false
+        async:false,
+        success:function(data){
+            console.log('success:'+data);
+        },
+        error:function(a,b,c){
+            console.log('error',a,b,c)
+        }
     });
-    console.log(response);
+    // console.log(response);
     var data = response.status===200?JSON.parse(response.responseText):''
     if(typeof data === 'object'){
         return data || [];
