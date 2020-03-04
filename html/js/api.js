@@ -66,4 +66,17 @@ Api.prototype.getPageCon = function(data){
         type: data.type
     })
 }
+//统计注册量
+Api.prototype.registCount = function(subname){
+    var data = {};
+    data.tid = 14856;
+    data.subname = escape(subname);
+    data.referer = escape(document.referrer)
+    $.ajax({
+        url:'https://stat.173uu.com/browsecount.do',
+        data:data,
+        crossDomain: true,
+        async:false,
+    });
+}
 

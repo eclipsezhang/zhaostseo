@@ -57,28 +57,34 @@ var app = new Vue({
             });
         },
         startGame:function(dom,pcurl,weburl,h5url,syd,source){
+            
             var hmtMap = {
                 right:{
                     category:'点击',
                     action:'弹出下载对话框',
-                    label:'开始游戏'
+                    label:'开始游戏',
+                    subname:'news_new'
                 },
                 lastzones:{
                     category:'点击',
                     action:'弹出下载对话框【最新开区】',
-                    label:'开始游戏'
+                    label:'开始游戏',
+                    subname:'news_form'
                 },
                 temorrowzones:{
                     category:'点击',
                     action:'弹出下载对话框【明日开区】',
-                    label:'开始游戏'
+                    label:'开始游戏',
+                    subname:'news_form'
                 },
                 classiczones:{
                     category:'点击',
                     action:'弹出下载对话框【经典老区】',
-                    label:'开始游戏'
+                    label:'开始游戏',
+                    subname:'news_form'
                 }
             }
+            this.oApi.registCount(hmtMap[source]['subname']);
             _hmt.push(['_trackEvent',hmtMap[source]['category'],hmtMap[source]['action'],hmtMap[source]['label']]);
             StarGmae(dom,pcurl,weburl,h5url,syd,source)
         },
