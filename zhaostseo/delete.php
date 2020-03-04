@@ -2,7 +2,7 @@
 
 include_once 'common.inc';
 
-// È™åÁ≠æ
+// —È«©
 $id = $_GET['id'];
 $type = $_GET['type'];
 $unixtime = $_GET['unixtime'];
@@ -11,14 +11,14 @@ $sign = $_GET['sign'];
 $mysign = md5($id . $unixtime . SIGN_KEY);
 
 // if ($sign != $mysign) {
-//     echo json_encode(array('status' => 2, 'msg' => iconv('GB2312', 'UTF-8', 'Á≠æÂêçÈîôËØØ')));
+//     echo json_encode(array('status' => 2, 'msg' => iconv('GB2312', 'UTF-8', '«©√˚¥ÌŒÛ')));
 //     exit;
 // }
 
 $list_id = explode(',', $id);
 $list_type = explode(',', $type);
 
-// Êõ¥Êñ∞È¶ñÈ°µ
+// ∏¸–¬ ◊“≥
 {
     $toplist = array();
     $topsort = array();
@@ -46,12 +46,12 @@ $list_type = explode(',', $type);
 
         savefile($html, FILE);
     } else {
-        echo json_encode(array('status' => 2, 'msg' => iconv('GB2312', 'UTF-8', 'ËØªÂèñÂàóË°®Â§±Ë¥•')));
+        echo json_encode(array('status' => 2, 'msg' => iconv('GB2312', 'UTF-8', '∂¡»°¡–±Ì ß∞‹')));
         exit;
     }
 }
 
-// Âà†Èô§Êñá‰ª∂
+// …æ≥˝Œƒº˛
 {
 	foreach ($list_id as $key => $id) {
 		$type = $list_type[$key];
@@ -74,7 +74,7 @@ $list_type = explode(',', $type);
 	            break;
 	        
 	        default:
-	            echo json_encode(array('status' => 2, 'msg' => iconv('GB2312', 'UTF-8', 'Êâæ‰∏çÂà∞ÊåáÂÆöÁ±ªÂûã')));
+	            echo json_encode(array('status' => 2, 'msg' => iconv('GB2312', 'UTF-8', '’“≤ªµΩ÷∏∂®¿‡–Õ')));
 	            exit;
 	    }
 

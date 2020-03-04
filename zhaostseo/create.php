@@ -14,7 +14,7 @@ $mysign = md5($id . $unixtime . SIGN_KEY);
 //     exit;
 // }
 
-$sql = "select top 1 type from hy_zhaostnews where id = {$id}";
+$sql = "select top 1 type, newstime from hy_zhaostnews where id = {$id}";
 $ret = queryByStore($sql);
 
 if (!$ret) {
@@ -23,6 +23,7 @@ if (!$ret) {
 }
 
 $type = $ret[0]['type'];
+$newstime = $ret[0]['newstime'];
 
 $active_index = '';
 $active_new_articles = '';
@@ -66,10 +67,21 @@ $active_player_att = '';
 }
 
 if ($type != 0) {
+    // 查询相邻的上一条新闻
+    $prev_sql = "select top 1 id from hy_zhaostnews where id > {$id} and newstime >= '{$newstime}' and type = {$type} order by newstime desc, id desc";
+    $prev_news = queryByStore($prev_sql);
+
     switch ($type) {
         case 1:
             $active_new_articles = 'active';
             $position = '最新资讯'; // new_articles_id.html
+
+            if ($prev_news) {
+                $prev_id = $prev_news[0]['id'];
+                $html = createDetails($prev_id, $position, NEW_ARTICLES);
+                savefile($html, NEW_ARTICLES . "_{$prev_id}.html");
+            }
+
             $html = createDetails($id, $position, NEW_ARTICLES);
             savefile($html, NEW_ARTICLES . "_{$id}.html");
             break;
@@ -77,6 +89,13 @@ if ($type != 0) {
         case 2:
             $active_game_evaluation = 'active';
             $position = '游戏测评'; // game_evaluation_id.html
+
+            if ($prev_news) {
+                $prev_id = $prev_news[0]['id'];
+                $html = createDetails($prev_id, $position, GAME_EVALUATION);
+                savefile($html, GAME_EVALUATION . "_{$prev_id}.html");
+            }
+
             $html = createDetails($id, $position, GAME_EVALUATION);
             savefile($html, GAME_EVALUATION . "_{$id}.html");
             break;
@@ -84,6 +103,13 @@ if ($type != 0) {
         case 3:
             $active_game_data = 'active';
             $position = '游戏资料'; // game_data_id.html
+
+            if ($prev_news) {
+                $prev_id = $prev_news[0]['id'];
+                $html = createDetails($prev_id, $position, GAME_DATA);
+                savefile($html, GAME_DATA . "_{$prev_id}.html");
+            }
+
             $html = createDetails($id, $position, GAME_DATA);
             savefile($html, GAME_DATA . "_{$id}.html");
             break;
@@ -91,6 +117,13 @@ if ($type != 0) {
         case 4:
             $active_player_att = 'active';
             $position = '玩家关注'; // player_att_id.html
+
+            if ($prev_news) {
+                $prev_id = $prev_news[0]['id'];
+                $html = createDetails($prev_id, $position, PLAYER_ATT);
+                savefile($html, PLAYER_ATT . "_{$prev_id}.html");
+            }
+
             $html = createDetails($id, $position, PLAYER_ATT);
             savefile($html, PLAYER_ATT . "_{$id}.html");
             break;

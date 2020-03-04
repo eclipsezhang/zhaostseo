@@ -365,7 +365,7 @@ function createNewsList($type, $num, $news_name) {
     // 游戏资料 game-data type=3 num=10
     // 玩家关注 player-att type=4 num=10
 
-    $sql = "select top {$num} id, title, newstime from hy_zhaostnews where type = {$type} order by newstime, id desc";
+    $sql = "select top {$num} id, title, newstime from hy_zhaostnews where type = {$type} order by newstime desc, id desc";
 
     $news_list = queryByStore($sql);
 
@@ -392,17 +392,17 @@ function createDetails($id, $position, $news_name) {
     $sql = "select top 1 title, newstime, convert(text, newscontent) as newscontent, keywords from hy_zhaostnews where id = {$id}";
     $news = queryByStore($sql);
 
-    $prev_sql = "select top 1 id, title from hy_zhaostnews where id < {$id} and type = {$type} order by id desc"; // 上一页
-    $prev_news = queryByStore($prev_sql);
-
-    $next_sql = "select top 1 id, title from hy_zhaostnews where id > {$id} and type = {$type} order by id"; // 下一页
-    $next_news = queryByStore($next_sql);
-
     $title = $news[0]['title'] . '-找神途';
     $newstime = date('Y-m-d', strtotime($news[0]['newstime']));
     $content = htmlspecialchars_decode($news[0]['newscontent']);
     $keywords = $news[0]['keywords'];
     $description = substr($content, 0, 80);
+
+    $prev_sql = "select top 1 id, title from hy_zhaostnews where ((id != {$id} and newstime > '{$newstime}') or (id > {$id} and newstime = '{$newstime}')) and type = {$type} order by newstime asc, id asc"; // 上一页
+    $prev_news = queryByStore($prev_sql);
+
+    $next_sql = "select top 1 id, title from hy_zhaostnews where ((id != {$id} and newstime < '{$newstime}') or (id < {$id} and newstime = '{$newstime}')) and type = {$type} order by newstime desc, id desc"; // 下一页
+    $next_news = queryByStore($next_sql);
 
     $meta = "<meta name=\"keywords\" content=\"{$keywords}\"/>
     <meta name=\"description\" content=\"{$description}\"/>";
