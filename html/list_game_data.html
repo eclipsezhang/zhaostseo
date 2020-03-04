@@ -550,7 +550,7 @@
             <div class="new-district">
                 <div class="district-tit">
                     <span class="tit">新区推荐</span>
-                    <p @click="nextpage">
+                    <p @click="nextpage" v-if="changeNewState">
                        <img src="img/icon_new.png" alt="" srcset="">
                        <span>换一批</span>
                     </p>
