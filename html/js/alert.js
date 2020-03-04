@@ -1,4 +1,4 @@
-	function StarGmae(dom, pcurl, murl, h5url, sywndlq,source) {//开始游戏
+﻿	function StarGmae(dom, pcurl, murl, h5url, sywndlq,source) {//开始游戏
 		var actionMap = {
 			right:'',
 			lastzones:'【最新开区】',

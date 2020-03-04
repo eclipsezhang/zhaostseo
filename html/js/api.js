@@ -1,4 +1,4 @@
-function Api(){
+﻿function Api(){
     this.baseUrl = "http://47.96.79.199/opengame.do";
 }
 
