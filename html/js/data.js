@@ -11,7 +11,8 @@ var app = new Vue({
             newzonepageindex:0,
             show:false,
             pagesize:10,
-            totalPages:0
+            totalPages:0,
+            changeNewState:false
     },
     mounted:function() {
         //启动tab切换
@@ -24,10 +25,6 @@ var app = new Vue({
         this.type = document.querySelector('.active').getAttribute('type');
         this.type && this.getNews({type:this.type});
         this.pagetion(this.totalPages);
-        var that = this;
-        setInterval(function(){
-            that.nextpage();
-        },5000);
     },
     methods: {
         getAllData:function(){
@@ -36,6 +33,13 @@ var app = new Vue({
             this.temorrowzones = this.oApi.getRecommend(2);
             this.classiczones = this.oApi.getRecommend(3);
             this.showzones = this.newzones.slice(0,10);
+            if(this.newzones.length>10){
+                this.changeNewState = true;
+                var that = this;
+                setInterval(function(){
+                    that.nextpage();
+                },5000);
+            }
         },
         nextpage:function(){
             this.show = false;
