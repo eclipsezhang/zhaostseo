@@ -3,7 +3,7 @@
 }
 
 Api.prototype.formatTime = function(time){
-    var date = new Date(time);
+    var date = new Date(time.replace(/\-/g, "\/"));
     var month = date.getMonth()+1;
     var day = date.getDate();
     var hour = date.getHours();
