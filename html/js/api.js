@@ -17,18 +17,8 @@ Api.prototype.request = function(act,data){
         url:this.baseUrl+'?act='+act,
         data:data||{},
         crossDomain: true,
-        // headers: {
-        //     'Access-Control-Allow-Origin': '*'
-        // },
         async:false,
-        success:function(data){
-            console.log('success:'+data);
-        },
-        error:function(a,b,c){
-            console.log('error',a,b,c)
-        }
     });
-    // console.log(response);
     var data = response.status===200?JSON.parse(response.responseText):''
     if(typeof data === 'object'){
         return data || [];
@@ -71,7 +61,6 @@ Api.prototype.getNews = function(data){
 }
 // 请求上一页下一页
 Api.prototype.getPageCon = function(data){
-    console.log(data)
     return this.request('beforeafter', {
         id: data.id,
         type: data.type
