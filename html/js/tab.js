@@ -4,18 +4,21 @@ function tab(){
     var tables = document.querySelectorAll('.open-list-table');
     tables[0].style.display = 'block';
     for(var i=0,j=tabs.length;i<j;i++){
-        var tab = tabs[i];
-        if(window.addEventListener){
-            tab.addEventListener('click',function(e){
-                handlerTab(e,i);
-            });
-        }else{
-            tab.attachEvent('onclick',function(e){
-                handlerTab(e,i);
-            });
-        }
+        (function(index){
+            var tab = tabs[index];
+            if(window.addEventListener){
+                tab.addEventListener('click',function(e){
+                    handlerTab(e,index);
+                });
+            }else{
+                tab.attachEvent('onclick',function(e){
+                    handlerTab(e,index);
+                });
+            }
+        })(i)
     }
     function handlerTab(e,index){
+        console.log(index);
         for(var i=0,j=tabs.length;i<j;i++){
             tabs[i].setAttribute('class','')
         }
