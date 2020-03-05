@@ -365,6 +365,28 @@ function createNewsList($type, $num, $news_name) {
     // 游戏资料 game-data type=3 num=10
     // 玩家关注 player-att type=4 num=10
 
+    switch ($type) {
+        case 1:
+            $position = '最新资讯'; // new_articles_id.html
+            break;
+
+        case 2:
+            $position = '游戏测评'; // game_evaluation_id.html
+            break;
+
+        case 3:
+            $position = '游戏资料'; // game_data_id.html
+            break;
+
+        case 4:
+            $position = '玩家关注'; // player_att_id.html
+            break;
+        
+        default:
+            echo json_encode(array('status' => 2, 'msg' => iconv('GB2312', 'UTF-8', '找不到指定类型')));
+            exit;
+    }
+
     $sql = "select top {$num} id, title, newstime from hy_zhaostnews where type = {$type} order by newstime desc, id desc";
 
     $news_list = queryByStore($sql);
@@ -378,7 +400,7 @@ function createNewsList($type, $num, $news_name) {
         $title = $news['title'];
         $newstime = date('Y-m-d', strtotime($news['newstime']));
 
-        $html .= "<li><p><a href=\"./{$news_name}_{$id}.html\">{$title}</a></p><span>{$newstime}</span></li>";
+        $html .= "<li><p><a onclick=\"_hmt.push(['_trackEvent', '打开', '打开{$position}新闻', '新闻标题']);\" href=\"./{$news_name}_{$id}.html\">{$title}</a></p><span>{$newstime}</span></li>";
     }
 
     return $html;
