@@ -1,4 +1,4 @@
-﻿	function StarGmae(dom, pcurl, murl, h5url, sywndlq,source) {//开始游戏
+	function StarGmae(dom, pcurl, murl, h5url, sywndlq,source) {//开始游戏
 		var actionMap = {
 			right:'',
 			lastzones:'【最新开区】',
@@ -11,7 +11,7 @@
 		if (pcurl && murl || murl && h5url || pcurl && h5url) {
 			var M = {};
 			if (pcurl) {
-				html += "<a style='margin-top:15px;display:block; class='dy' href='" + pcurl + "' onclick=\"_hmt.push(['_trackEvent','下载'，'点击下载端游"+actionMap[source]+"','端游下载'])\"><img src='img/pcd.png' alt=''></a>";
+				html += "<a style='margin-top:15px;display:block; class='dy' href='" + pcurl + "'><img src='img/pcd.png' alt='' onclick=\"_hmt.push(['_trackEvent','下载','点击下载端游"+actionMap[source]+"','端游下载']);\"></a>";
 				i++;
 			}
 			if (murl) {
@@ -19,11 +19,11 @@
 				if (sywndlq) {
 					html += "<a style='margin-top:15px;display:block; class='sy' href='javascript:;' onclick='register(this)'><img src='img/syd.png' alt=''></a>";
 				} else {
-					html += "<a style='margin-top:15px;display:block; class='sy' target='_blank' href='" + murl + "' onclick=\"_hmt.push(['_trackEvent','下载'，'打开代理手游网站"+actionMap[source]+"','手游下载'])\"><img src='img/syd.png' alt=''></a>";
+					html += "<a style='margin-top:15px;display:block; class='sy' target='_blank' href='" + murl + "'><img src='img/syd.png' alt='' onclick=\"_hmt.push(['_trackEvent','下载','打开代理手游网站"+actionMap[source]+"','手游下载']);\"></a>";
 				}
 			}
 			if (h5url) {
-				html += "<a style='margin-top:15px;display:block; class='h5' target='_blank' href='" + h5url + "' onclick=\"_hmt.push(['_trackEvent','下载'，'打开H5游戏"+actionMap[source]+"','h5下载'])\"><img src='img/h5d.png' alt=''></a>";
+				html += "<a style='margin-top:15px;display:block; class='h5' target='_blank' href='" + h5url + "'><img src='img/h5d.png' alt='' onclick=\"_hmt.push(['_trackEvent','下载','打开H5游戏"+actionMap[source]+"','h5下载']);\"></a>";
 				i++;
 			}
 			//M.dialog6.close()
