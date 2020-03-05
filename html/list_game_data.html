@@ -12,312 +12,14 @@
     <link rel="stylesheet" href="css/openlist.css">
     <link rel="stylesheet" href="js/alert.css">
     <link rel="stylesheet" type="text/css" href="js/miaov_style.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
     <script type="text/javascript" src="js/miaov.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
     <script>
         var _hmt = _hmt || [];
     </script>
-    <style type="text/css">
-        /*---------顶部导航---------*/
-        .top_fix {
-            width: 100%;
-            top: 0px;
-            z-index: 9999;
-            position: fixed;
-            background: #FFF;
-        }
-
-        .top {
-            background: url(images/top_bg.jpg) repeat-x;
-            height: 37px;
-            margin: 0px 0px 1px 0px;
-            line-height: 36px;
-            color: #DDD;
-        }
-
-        .top a {
-            margin: 0px 6px;
-            color: #777;
-        }
-
-        .top_content,
-        .nav_crl {
-            margin: 0px auto;
-            width: 980px;
-            overflow: hidden;
-        }
-
-        .left {
-            float: left;
-        }
-
-        .right {
-            float: right;
-        }
-
-        /*---------主导航---------*/
-        .mainnav {
-            background: url(images/nav_bg.jpg) repeat-x bottom;
-            height: 84px;
-            border-top: 0px;
-            width: 100%;
-            margin-top: 37px;
-            zoom: 1;
-        }
-
-        .mainmenu {
-            width: 978px;
-            margin: 0px auto;
-        }
-
-        .logo {
-            border-right: 1px solid #EBEBEB;
-            background: url(images/logo.png) no-repeat 5px 1px;
-            width: 200px;
-            text-indent: -9999px;
-            display: block;
-            height: 80px;
-        }
-
-        .nav {
-            float: left;
-            height: 84px;
-            width: 480px;
-            border-left: 1px solid #FFF;
-            border-right: 1px solid #EBEBEB;
-            overflow: hidden;
-            padding: 0px 0px 0px 20px;
-        }
-
-        .nav ul {
-            margin: 12px 0px 0px 0px;
-        }
-
-        .nav a {
-            font-size: 14px;
-            color: #666;
-            line-height: 28px;
-            margin: 0px 14px 0px 0px;
-        }
-
-        .nav a:hover {
-            color: #FF6600;
-        }
-
-        .nav .nav_cat {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .nav_crl {
-            background: url(images/nav_crl.png);
-            width: 100%;
-            height: 9px;
-        }
-
-        /*---------按钮---------*/
-        .button {
-            position: relative;
-            float: left;
-            border-left: 1px solid #FFF;
-            height: 65px;
-            width: 250px;
-            padding: 5px 0px 0px 15px;
-        }
-
-        .button li {
-            float: left;
-            margin: 5px 10px 0px 0px;
-            overflow: hidden;
-            display: inline;
-        }
-
-        /*---------底部---------*/
-        .footer {
-            width: 100%;
-            height: 110px;
-            margin: 0px auto;
-            padding-top: 0px;
-            text-align: center;
-            line-height: 20px;
-            color: #615c60;
-            overflow: hidden;
-            clear: both;
-        }
-
-        .footer p {
-            height: 22px;
-            margin: 0;
-        }
-
-        .footer a {
-            color: #333;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .footer a:hover {
-            color: #333;
-        }
-
-        .adFloat {
-            position: fixed;
-            z-index: 1010;
-            top: 50px;
-        }
-
-        .adLocalityLeft {
-            left: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-        }
-
-        .adLocalityRight {
-            right: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-        }
-
-        .adFloat .adCon-Box {
-            margin: 3px;
-            overflow: hidden;
-            min-width: 100px;
-            min-height: 70px;
-        }
-
-        .adFloat .actionBar {
-            height: 25px;
-            padding: 0 5px;
-            border-top: 1px solid #ccc;
-            background: url(images/icon_adfloat.png) repeat-x 0 -25px;
-        }
-
-        .adFloat .actionBar a {
-            width: 52px;
-            height: 19px;
-            float: right;
-            margin-top: 3px;
-            background: url(images/icon_adfloat.png) no-repeat 0 -60px;
-            text-indent: -999px;
-            overflow: hidden;
-        }
-
-        .adFloat .actionBar a:hover {
-            background-position: -55px -60px;
-        }
-
-        .adFloat a.close {
-            background: #fff url(images/icon_adfloat.png) no-repeat -6px -8px;
-            width: 13px;
-            height: 13px;
-            display: block;
-            position: absolute;
-            top: -2px;
-            right: 0;
-            text-indent: -999px;
-            overflow: hidden;
-            border: 1px solid #ccc;
-        }
-
-        .adFloat h2 {
-            font-size: 14px;
-            font-weight: 800;
-            background-color: #cb0000;
-            color: #fff;
-            line-height: 24px;
-            text-indent: 10px;
-            margin: 3px 3px 0;
-        }
-
-        .adFloat h3 {
-            font-size: 12px;
-            font-weight: normal;
-            background-color: #f7f7f7;
-            color: #666;
-            line-height: 30px;
-            text-indent: 10px;
-            clear: both;
-        }
-
-        .adFloat .adCon-Box .module ul {
-            font-size: 0;
-            line-height: 0;
-        }
-
-        .adFloat .adCon-Box .module ul li {
-            font-size: 12px;
-            line-height: 1.5em;
-            padding: 2px 4px;
-        }
-
-        .adFloat .adCon-Box .module ul li a {
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            -o-text-overflow: ellipsis;
-            overflow: hidden;
-            width: 100%;
-            display: block;
-            word-wrap: normal;
-        }
-
-        .adFloat .adCon-Box .module ul p {
-            font-size: 12px;
-            line-height: 1.5em;
-            padding: 2px 4px 0;
-        }
-
-        .adFloat .line {
-            border-top: 1px dotted #ccc;
-            height: 5px;
-            margin-top: 5px;
-        }
-
-        .hot-tag {
-            margin: 0 auto;
-            padding: 10px 0 0;
-        }
-
-        .hot-tag li {
-            float: left;
-            padding: 0 5px;
-            margin-bottom: 8px;
-        }
-
-        .hot-tag li a {
-            display: block;
-            padding: 0 5px;
-            text-decoration: none;
-            font-size: 12px;
-            border: 1px solid #d3d3d3;
-            line-height: 22px;
-        }
-
-        .hot-tag li a:hover {
-            background-color: #fff;
-            color: #cb0000;
-            border-color: #bbb;
-        }
-
-        .hot-tag li.hilite a {
-            background-color: #ff7a00;
-            color: #fff;
-            border-color: #d55e00;
-        }
-
-        .hot-tag li.hilite a:hover {
-            background-color: #ff4e00;
-            border-color: #c02400;
-        }
-
-        .adshow {
-            display: ;
-        }
-
-        .adhidden {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="last-content">
@@ -392,6 +94,87 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function StarGmae(dom, pcurl, murl, h5url, sywndlq,source) {//开始游戏
+            if(source=="start"){
+                var action='下载端游';
+                var label='端游';
+                var H5action='打开H5游戏页面';
+                var H5label='H5游戏';
+                _czc.push(['_trackEvent',  '点击', '弹出下载对话框', '开始游戏','5','dianji']);
+            }else{
+                var action='下载万能登录器-端游';
+                var label='万能登录器-端游';
+                var H5action='打开H5万能登录页面';
+                var H5label='万能登录器-H5';
+
+            }
+
+
+            var html = '';
+            var height = '';
+            var i = 0;
+            if (pcurl && murl || murl && h5url || pcurl && h5url) {
+                var M = {};
+                if (pcurl) {
+                    html += "<a class='dy' href='" + pcurl + "' onclick=\"_czc.push(['_trackEvent',  '下载', '"+action+"', '"+label+"','5','xiazai']);\"><img src='images/pcd.png' alt=''></a>";
+                    i++;
+                }
+                if (murl) {
+                    i++;
+                    if (sywndlq) {
+                        html += "<a class='sy' href='javascript:;' onclick='register(this)'><img src='images/syd.png' alt=''></a>";
+                    } else {
+                        html += "<a class='sy' target='_blank' href='" + murl + "' onclick=\"_czc.push(['_trackEvent',  '下载', '下载手游', '手游','5','xiazai']);\"><img src='images/syd.png' alt=''></a>";
+                    }
+                }
+                if (h5url) {
+                    html += "<a class='h5' target='_blank' href='" + h5url + "' onclick=\"_czc.push(['_trackEvent',  '打开', '"+H5action+"', '"+H5label+"','5','打开']);\"><img src='images/h5d.png' alt=''></a>";
+                    i++;
+                }
+                //M.dialog6.close()
+                var html = "<div class='fieldset'>" + html + "</div>";
+                M.dialog6 = jqueryAlert({
+                    'title': '',
+                    'style': 'pc',
+                    //'content' :  "<div class='fieldset'><a class='dy' href='"+dom.getAttribute('tarurl')+"'>端游</a><a class='sy' href='"+dom.getAttribute('tarurl')+"'>手游</a><img src='images/tk.png' border='0'/></div>",
+                    'content': html,
+                    'width': '300px',
+                    'height': i === 3 ? '280px' : '200px',
+                    'modal': true,
+                    'buttons': {
+                        '关闭': function () { },
+                    }
+                })
+                M.dialog6.show();
+                $('.alert-btn-close').html('×');
+                $('.alert-btn-box').html('');
+            } else if (murl) {
+                //window.open(dom.getAttribute('tarurl'))
+                window.open(murl)
+                M.dialog.close()
+            } else {
+                window.location.href = pcurl;
+                //window.location.href=dom.getAttribute('tarurl');
+                M.dialog.close()
+            }
+        }
+
+        function register(value) {
+            _czc.push(['_trackEvent',  '下载', '下载万能登录器-手游', '万能登录器-手游','5','xiazai']);
+            var url = value.url;
+            var rid = parseInt(Math.random() * 100000) + '';
+            value.parentElement.innerHTML = "<div style='margin-top:60px;margin-left:76px;' id='" + rid + "'></div></br><div style='position: relative;top: -10px;left: 50px;font-size: 16px;'>打开微信，扫一扫</div>";
+            $('#' + rid).qrcode({
+                render: "canvas", // 渲染方式有table方式和canvas方式
+                width: 150,   //默认宽度
+                height: 150, //默认高度
+                text: "https://www.zhaost.com/sydlq/", //二维码内容
+            });
+
+        }
+    </script>
 
     <div class="list-content" id="list-content" v-cloak>
         <!-- list nav -->
@@ -688,7 +471,6 @@
         </p>
     </div>
 
-    <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/vue.min.js"></script>
     <script type="text/javascript" src="js/alert.min.js"></script>
     <script src="js/alert.js"></script>
