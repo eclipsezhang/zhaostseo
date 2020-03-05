@@ -40,12 +40,6 @@
 		</script>
 		<script>
 			var _hmt = _hmt || [];
-			(function() {
-				var hm = document.createElement("script");
-				hm.src = "https://hm.baidu.com/hm.js?ca88f81ef448407218dabf1c349718b9";
-				var s = document.getElementsByTagName("script")[0];
-				s.parentNode.insertBefore(hm, s);
-			})();
 		</script>
 		<style type="text/css">
 			/***弹框***/
@@ -1079,27 +1073,27 @@
 		    <!-- home navigation -->
 		    <div class="bl-nav">
 	            <span>
-	                <a href="list.html">
+	                <a href="list.html" onclick="_hmt.push(['_trackEvent', '点击', '打开新闻首页', '首页'])">
 	                    首页
 	                </a> 
 	            </span>
 	            <span>
-	                <a href="list_new_articles.html" onclick="_hmt.push(['_trackEvent', '打开', '打开最新咨询新闻', '新闻标题']);">
+	                <a href="list_new_articles.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转最新咨询', '最新资讯'])">
 	                    最新资讯
 	                </a>
 	            </span>
 	            <span>
-	                <a href="list_game_evaluation.html" onclick="_hmt.push(['_trackEvent', '打开', '打开游戏评测新闻', '新闻标题']);">
+	                <a href="list_game_evaluation.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转游戏评测', '游戏评测'])">
 	                    游戏评测
 	                </a>
 	            </span>
 	            <span>
-	                <a href="list_game_data.html" onclick="_hmt.push(['_trackEvent', '打开', '打开游戏资料新闻', '新闻标题']);">
+	                <a href="list_game_data.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转游戏资料', '游戏资料'])">
 	                    游戏资料
 	                </a>
 	            </span>
 	            <span>
-	                <a href="list_player_att.html" onclick="_hmt.push(['_trackEvent', '打开', '打开玩家关注新闻', '新闻标题']);">
+	                <a href="list_player_att.html" onclick="_hmt.push(['_trackEvent', '点击', '跳转玩家关注', '玩家关注'])">
 	                    玩家关注
 	                </a>
 	            </span>
@@ -1404,6 +1398,15 @@
 				}
 			}
 			divrefresh();
+		</script>
+		<script type="text/javascript">
+			 var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?ca88f81ef448407218dabf1c349718b9";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
 		</script>
 	</body>
 </html>
